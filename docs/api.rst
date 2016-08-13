@@ -186,6 +186,11 @@ to handle it, which defaults to print a traceback and ignore the exception.
     :attr:`Client.messages` cache, then these events will not be called. This happens if the message
     is too old or the client is participating in high traffic servers. To fix this, increase
     the ``max_messages`` option of :class:`Client`.
+    
+    .. note::
+
+        Due to the limitations of Discord API, messages with embeded links
+        will call the `on_message_edit()` function.
 
     :param message: A :class:`Message` of the deleted message.
     :param before: A :class:`Message` of the previous version of the message.
